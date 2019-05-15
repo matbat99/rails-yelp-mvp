@@ -35,9 +35,20 @@
   <% end %>
 </div>
 
-<div>
-  <%= link_to "Add a review", new_restaurant_review_path(@restaurant)  %>
+<div class="container">
+
+  <p>Add a Review</p>
+
+  <%= simple_form_for([@restaurant, Review.new]) do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: %w[0 1 2 3 4 5]  %>
+
+    <%= f.submit %>
+
+  <% end %>
+
 </div>
+
 <br><br>
 
 <div>
