@@ -1,0 +1,46 @@
+<div class="show container">
+<h1><%= @message %></h1>
+
+<h1><%= @restaurant.name %></h1>
+
+<div>
+
+
+<br>
+
+<%= image_tag Faker::Company.logo, alt: "alttext", width: 250%>
+<h2>
+  A beatiful
+    <%= @restaurant.category %>
+    restaurant
+</h2>
+
+<p>
+  Come visit us at
+  <%= @restaurant.address %>
+</p>
+
+</div>
+
+<br>
+<br>
+
+<div>
+  <h3>Reviews</h3>
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <%= review.content %>
+      <%= "🍔" * review.rating %>
+    </li>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Add a review", new_restaurant_review_path(@restaurant)  %>
+</div>
+<br><br>
+
+<div>
+ <%= link_to "Back", root_path  %>
+</div>
+</div>

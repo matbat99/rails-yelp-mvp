@@ -12,6 +12,17 @@
   </head>
 
   <body>
+
+    <div class="container">
+      <%- flash.each do |name, message| %>
+        <div class="big-message alert alert-success fixed-top">
+          <h1>
+            <%= "#{message}" %>
+          </h1>
+        </div>
+      <% end %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

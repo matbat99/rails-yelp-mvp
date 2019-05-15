@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a {
+  text-decoration: none;
+}
+
+.big-message {
+  height: 65px;
+}
+
+.show {
+  padding: 5px 12p;
+  margin: 70px auto;
+}
